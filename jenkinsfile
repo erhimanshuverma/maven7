@@ -24,36 +24,5 @@ pipeline
                 }
             }
         }
-        stage('deploy')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.Deploy("declarativesharedlibrary","172.31.23.85","testapp")
-                }
-            }
         }
-        stage('testing')
-        {
-          steps
-          {
-              script
-              {
-                  cicd.gitDownload("FunctionalTesting")  
-                  cicd.runSelenium("declarativesharedlibrary")
-              }
-          }
-        }
-        stage('delivery')
-        {
-            steps
-            {
-                script
-                {
-                    cicd.Deploy("declarativesharedlibrary","172.31.23.210","prodapp")
-                }
-            }
-        }
-    }
-}
+	}
