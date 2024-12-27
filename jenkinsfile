@@ -30,7 +30,7 @@ pipeline
             {
                 script
                 {
-                    cicd.Deploy("declarativesharedlibrary","172.31.23.85","testapp")
+                    cicd.Deploy("DeclarativePipeline1","172.31.1.147","testapp")
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline
               script
               {
                   cicd.gitDownload("FunctionalTesting")  
-                  cicd.runSelenium("declarativesharedlibrary")
+                  cicd.runSelenium("DeclarativePipeline1")
               }
           }
         }
@@ -51,7 +51,7 @@ pipeline
             {
                 script
                 {
-                    cicd.Deploy("declarativesharedlibrary","172.31.23.210","prodapp")
+                    cicd.Deploy("DeclarativePipeline1","172.31.9.253","prodapp")
                 }
             }
         }
